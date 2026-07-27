@@ -51,17 +51,17 @@ flowchart TD
     EPF[Endpoint pre-check<br/>failure]
     EPA[Abort before<br/>behaviors start]
 
-    EM[Email pre-checks<br/>Build stages<br/>Verify stage connected<br/>Check timeout]
+    EM[Email pre-checks<br/>Verify stage connected<br/>Check timeout]
     EMP{Email checks<br/>passed?}
     EMF[Email pre-check<br/>failure]
     EMA[Abort before<br/>behaviors start]
 
-    WAF[WAF pre-checks<br/>Build stages<br/>Verify stage connected<br/>Check timeout]
+    WAF[WAF pre-checks<br/>Verify stage connected<br/>Check timeout]
     WAFP{WAF checks<br/>passed?}
     WAFF[WAF pre-check<br/>failure]
     WAFA[Abort before<br/>behaviors start]
 
-    NET[Network pre-checks<br/>Build stages<br/>Verify stage connected<br/>Check timeout]
+    NET[Network pre-checks<br/>Verify stage connected<br/>Check timeout]
     NETP{Network checks<br/>passed?}
     NETF[Network pre-check<br/>failure]
     NETA[Abort before<br/>behaviors start]
@@ -190,9 +190,9 @@ FourCore first checks whether selected targets are available and reachable. If a
 The selected vector determines which pre-check branch runs before behaviors begin:
 
 - **Endpoint:** Builds payloads and stages, checks elevation, validates required AD or local users, and verifies stage and payload connectivity.
-- **Email:** Builds stages, verifies stage connectivity, and checks for connection timeout before start.
-- **WAF:** Builds stages, verifies stage connectivity, and checks for connection timeout before start.
-- **Network:** Builds stages, verifies stage connectivity, and checks for connection timeout before start.
+- **Email:** Verifies stage connectivity and checks for connection timeout before start.
+- **WAF:** Verifies stage connectivity and checks for connection timeout before start.
+- **Network:** Verifies stage connectivity and checks for connection timeout before start.
 
 Any vector-specific pre-check failure aborts the simulation before behavior execution starts.
 
